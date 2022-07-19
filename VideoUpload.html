@@ -1,0 +1,20 @@
+{% extends "Parent.html" %}
+
+{% block projectcontent %}
+    <div id="div1">
+                <h2>File Upload</h2>
+                <form action="/ProcessUploadVideo" method="post" enctype="multipart/form-data">
+                  <div class="form-group row">
+                    <label for="imgfile" class="col-3 col-form-label">Video To Upload</label>
+                    <div class="col-9">
+                        <input type="file" class="" id="videofile" name="videofile" required>
+                    </div>
+                  </div>
+                                
+                  <button type="submit" class="btn btn-info">Submit</button>
+                </form>
+    </div>
+    {% if processResult | length > 0 %}
+        <h2 class="alert alert-success">{{ processResult }}</h2>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "Parent.html" %}
+
+{% block projectcontent %}
+    <div id="div1">
+                
+        {% if processResult.startswith("Success") %}
+            <h2 class="alert alert-success">{{ processResult }}</h2>
+        {% else %}
+            <h2 class="alert alert-danger">{{ processResult }}</h2>
+        {% endif %}
+    </div>
+{% endblock %}
